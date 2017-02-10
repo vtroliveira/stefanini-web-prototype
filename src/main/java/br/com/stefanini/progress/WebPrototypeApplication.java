@@ -1,4 +1,4 @@
-package br.com.stefanini;
+package br.com.stefanini.progress;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
