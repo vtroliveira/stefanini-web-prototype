@@ -1,0 +1,15 @@
+.backGround {
+	background: #0C132A;
+	height: 100%;
+/* 	margin: 0; */
+/* 	padding: 0; */
+	width: 100%;
+	display: table
+}
+
+.footer {
+	position:relative;
+	bottom:0;
+	width:100%;
+	color: white;
+}
