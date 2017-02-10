@@ -27,14 +27,28 @@ public class Login implements Serializable{
 	@GeneratedValue
 	private int id;
 	
-	@Email(message = "*Please provide a valid Email")
-	@NotEmpty(message = "*Please provide an email")
+	@Email(message = "*Por favor, insira um usuário válido!")
+	@NotEmpty(message = "*Por favor, insira seu usuário!")
 	private String username;
 	
-	@Length(min = 5, message = "*Your password must have at least 5 characters")
-	@NotEmpty(message = "*Please provide your password")
+	@Length(min = 6, message = "*Sua senha deve conter, no mínimo, 6 caracteres!")
+	@NotEmpty(message = "*Por favor, insira sua senha!")
 	private String password;
 	
+	private int active;
+	
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@JoinTable(name = "login_permission", joinColumns = @JoinColumn(name = "login_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
+	private Set<Permission> permission;
+	
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -59,6 +73,12 @@ public class Login implements Serializable{
 		this.password = password;
 	}
 	
-	
+	public Set<Permission> getPermission() {
+		return permission;
+	}
+
+	public void setPermission(Set<Permission> permission) {
+		this.permission = permission;
+	}
 
 }
