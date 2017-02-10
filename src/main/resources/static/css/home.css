@@ -1,0 +1,129 @@
+@import "fonts.css";
+
+@charset "utf-8";
+
+.clr	{ clear:both }
+html	{ height:100% }
+
+body		{
+				background:#FF0;
+				margin:0px;
+				width:100%
+			} 
+			
+body.login	{
+				background:#0C132A;
+				height:90%;
+				margin: 0;
+				padding:0;
+				width:100%;
+				display:table
+			}
+
+
+
+#boxLoginBase { 
+				vertical-align: middle;
+				display: table-cell
+				}
+				
+#boxLogin		{
+					top:-50%;
+					width:402px;
+					margin:auto
+				}
+
+.logo	{
+			width:200px;
+			height:70px;
+			margin:0;
+			background:url(../images/logo.png) center center no-repeat
+			}
+				
+#boxLogin div.logo	{
+						width:100% !important;
+						margin-bottom:36px
+					}
+
+#boxLoginContent	{
+						background-color:#FFF;
+						border-radius:8px;
+						padding:28px 30px 0 30px
+					}
+
+#header { background:#B6F0A2  }
+.base {  
+		width:1268px; 
+		margin:auto;
+		background:#C06B6D !important;
+		padding:20px 20px 20px 20px
+		}	
+
+#conteudo {
+			width:100%;
+			background:#6E7EDC;
+			clear:left
+			}
+
+.user { 
+		float:right;
+		background:#405BD9 !important 
+		}
+		
+.base div.logo	{ float:left; }
+
+
+h1
+
+.tituloLogin  { 
+				margin:0px 0 18px 0;
+				font-size:28px;
+				font-weight:normal;
+				text-align:center;
+				font-family:"Dax Regular" !important
+				} 
+
+input { outline:0 } 
+				 
+.texto	{
+			width:100%;
+			box-sizing:border-box;
+			border:0px;
+			border-bottom:1px solid #000000;
+			font-size:16px;
+			color:#0C132A;
+			font-family:"Open Sans", Tahoma, Verdana;
+			margin:10px 10px 0 0;
+			padding:10px 2px 10px 2px
+			}
+			
+.link{
+		width:100%;
+		font-size:16px;
+		color:#0C132A;
+		font-family:"Open Sans", Tahoma, Verdana;
+		margin:10px 10px 0 0;
+		padding:10px 2px 10px 2px
+}
+
+.texto::-webkit-input-placeholder	{
+										color:#0C132A;
+										opacity:0.95;
+										filter: alpha(opacity=95)
+										}
+
+.botao 	{
+			background:#009;
+			color:#FFF;
+			background:#0C132A;
+			border:none;
+			border-radius:6px;
+			font-family:"Open Sans";
+			font-size:16px; 
+			padding:8px 22px 8px 22px;
+			float:right;
+			margin:32px 0 30px 0;
+			cursor:pointer
+			}
+					
+.botao:active	{ margin:33px -1px 29px  1px	}	
