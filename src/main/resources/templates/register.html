@@ -16,7 +16,38 @@
 
 <body class="backGround">
 	
-	<h1>Tela de Registro</h1>
+	
+	<div id="boxLoginBase">
+
+		<div id="boxLogin">
+
+			<div class="logo"></div>
+
+			<div id="boxLoginContent">
+				
+				<form class="form-inline" method="post" th:action="@{/register}">
+
+					<input type="text" class="texto" id="nome" placeholder="nome completo" />
+					
+					<input type="text" class="texto" id="login" placeholder="usuário de rede" />
+					
+					<input type="number" class="texto" id="cpf" placeholder="cpf" /> 
+					
+					<input type="email" class="texto" id="email" placeholder="email" /> 
+					
+					<input type="password" class="texto" id="password" placeholder="senha" />
+					
+					<input type="password" class="texto" id="password" placeholder="confirmar senha" />
+
+					<button class="botao" type="submit">salvar</button>
+					
+				</form>
+				
+				<br class="clr" />					
+			</div>
+		</div>
+	</div>
+
 
 </body>
 </html>
