@@ -31,7 +31,8 @@ public class LoginServiceImpl implements LoginService {
 //	@Override
 //	public void saveLogin(Login login) {	
 //		login.setPassword(bCryptPasswordEncoder.encode(login.getPassword()));
-//		login.setActive(1);
+//		login.setActive(1);,
+	
 //        Permission loginPermission = permissionRepository.findByPermission("ADMIN");
 //        login.setPermission(new HashSet<Permission>(Arrays.asList(loginPermission)));
 //        loginRepository.save(login);
