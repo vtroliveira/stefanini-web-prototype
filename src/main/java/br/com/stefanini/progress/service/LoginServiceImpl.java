@@ -25,7 +25,7 @@ public class LoginServiceImpl implements LoginService {
 	public Login findLoginByUsername(String username) {
 		return loginRepository.findByUsername(username);
 	}
-	
+  
 	@Override
 	public void saveLogin(Login login) {	
 		login.setActive(1);
