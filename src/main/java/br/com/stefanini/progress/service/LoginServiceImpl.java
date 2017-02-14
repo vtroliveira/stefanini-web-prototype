@@ -17,25 +17,21 @@ public class LoginServiceImpl implements LoginService {
 	
 	@Autowired
 	private LoginRepository loginRepository;
+	
 	@Autowired
     private PermissionRepository permissionRepository;
-	
-//	@Autowired
-//    private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Override
 	public Login findLoginByUsername(String username) {
 		return loginRepository.findByUsername(username);
 	}
-	
-//	@Override
-//	public void saveLogin(Login login) {	
-//		login.setPassword(bCryptPasswordEncoder.encode(login.getPassword()));
-//		login.setActive(1);,
-	
-//        Permission loginPermission = permissionRepository.findByPermission("ADMIN");
-//        login.setPermission(new HashSet<Permission>(Arrays.asList(loginPermission)));
-//        loginRepository.save(login);
-//	}
+  
+	@Override
+	public void saveLogin(Login login) {	
+		login.setActive(1);
+		Permission loginPermission = permissionRepository.findByPermission("ADMIN");
+		login.setPermission(new HashSet<Permission>(Arrays.asList(loginPermission)));
+        loginRepository.save(login);
+	}
 
 }
