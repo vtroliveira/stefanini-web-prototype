@@ -4,30 +4,36 @@ import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Table(name="tb_login")
 public class Login implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
+	@Column(name = "cd_id_login")
 	private int id;
 	
+	@Column(name = "fd_user_login")
 	@Email(message = "*Por favor, insira um usuário válido!")
 	@NotEmpty(message = "*Por favor, insira seu usuário!")
 	private String username;
 	
+	@Column(name = "fd_password_login")
 	@Length(min = 6, message = "*Sua senha deve conter, no mínimo, 6 caracteres!")
 	@NotEmpty(message = "*Por favor, insira sua senha!")
 	private String password;
