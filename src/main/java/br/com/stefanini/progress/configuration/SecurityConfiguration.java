@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	//@Value("${spring.queries.permission-query}")
 	//private String permissionQuery;
-	//
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth)
 			throws Exception {
