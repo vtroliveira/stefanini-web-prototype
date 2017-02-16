@@ -1,81 +1,64 @@
 package br.com.stefanini.progress.model;
 
 import java.io.Serializable;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.annotation.Transient;
 
 @Entity
-public class Login implements Serializable{
-	
+@Table(name = "tb_login")
+public class Login implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
-	private int id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "cd_id_login")
+	private int idLogin;
+
+	// @NotEmpty(message = "*Por favor, insira seu usuário!")
+	@Column(name = "fd_user_login")
+	private String userLogin;
+
+	// @Length(min = 6, message = "*Sua senha deve conter, no mínimo, 6
+	// caracteres!")
+	// @NotEmpty(message = "*Por favor, insira sua senha!")
 	
-	@Email(message = "*Por favor, insira um usuário válido!")
-	@NotEmpty(message = "*Por favor, insira seu usuário!")
-	private String username;
-	
-	@Length(min = 6, message = "*Sua senha deve conter, no mínimo, 6 caracteres!")
-	@NotEmpty(message = "*Por favor, insira sua senha!")
-	private String password;
-	
-	private int active;
-	
-	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-	@JoinTable(name = "login_permission", joinColumns = @JoinColumn(name = "login_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
-	private Set<Permission> permission;
-	
-	public int getActive() {
-		return active;
+	@Column(name = "fd_password_login")
+	private String passwordLogin;
+
+	public int getIdLogin() {
+		return idLogin;
 	}
 
-	public void setActive(int active) {
-		this.active = active;
+	public void setIdLogin(int idLogin) {
+		this.idLogin = idLogin;
 	}
 
-	public int getId() {
-		return id;
+	public String getUserLogin() {
+		return userLogin;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUserLogin(String userLogin) {
+		this.userLogin = userLogin;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getPasswordLogin() {
+		return passwordLogin;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasswordLogin(String passwordLogin) {
+		this.passwordLogin = passwordLogin;
 	}
 	
-	public Set<Permission> getPermission() {
-		return permission;
-	}
-
-	public void setPermission(Set<Permission> permission) {
-		this.permission = permission;
-	}
+	
 
 }
