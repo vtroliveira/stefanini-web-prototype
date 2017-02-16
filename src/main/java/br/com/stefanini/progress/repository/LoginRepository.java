@@ -7,5 +7,5 @@ import br.com.stefanini.progress.model.Login;
 
 @Repository("loginRepository")
 public interface LoginRepository extends JpaRepository<Login, Long>{
-	Login findByUsername(String username);
+//	Login findByUsername(String username);
 }
