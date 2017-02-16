@@ -3,11 +3,13 @@
 package br.com.stefanini.progress.model;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,11 +32,11 @@ public class User implements Serializable{
 	private int idUser;
 	
 	@OneToOne
-	@JoinColumn(name="cd_id_login")
+	@JoinColumn(name="cd_id_login", foreignKey=@ForeignKey(name="fk_constraint_login"))
 	private Login login;
 	
-	@JoinColumn(name="cd_id_profile")
 	@ManyToOne
+	@JoinColumn(name="cd_id_profile", foreignKey=@ForeignKey(name="fk_constraint_profile"))
 	private Profile profile;
 	
 	@Column(name="fd_name_user")
@@ -48,16 +50,21 @@ public class User implements Serializable{
 	private boolean activeUser;
 	
 	@ManyToMany(cascade = {CascadeType.ALL, CascadeType.REMOVE})
-	@JoinTable(name = "tb_associative_user_project", joinColumns = @JoinColumn(name = "cd_id_user"), inverseJoinColumns = @JoinColumn(name = "cd_id_project"))
-	private Set<Project> project;
+	@JoinTable(name = "tb_associative_user_project", joinColumns = @JoinColumn(name = "cd_id_user", foreignKey=@ForeignKey(name="fk_constraint_user")), inverseJoinColumns = @JoinColumn(name = "cd_id_project", foreignKey=@ForeignKey(name="fk_constraint_project")))
+	private List<Project> project;
 	
 
-	public Set<Project> getProject() {
+
+	public List<Project> getProject() {
 		return project;
 	}
 
-	public void setProject(Set<Project> project) {
+	public void setProject(List<Project> project) {
 		this.project = project;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public int getIdUser() {

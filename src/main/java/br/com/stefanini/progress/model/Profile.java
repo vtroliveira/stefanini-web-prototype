@@ -47,4 +47,14 @@ public class Profile implements Serializable	{
 	public void setDescProfile(String descProfile) {
 		this.descProfile = descProfile;
 	}
+
+	public List<User> getUser() {
+		return user;
+	}
+
+	public void setUser(List<User> user) {
+		this.user = user;
+	}
+	
+	
 }
