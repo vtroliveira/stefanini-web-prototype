@@ -1,5 +1,3 @@
-
-
 package br.com.stefanini.progress.model;
 
 import java.io.Serializable;
