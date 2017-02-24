@@ -2,7 +2,6 @@ package br.com.stefanini.progress.configuration;
 
 import javax.sql.DataSource;
 
-import org.springframework.security.access.vote.AuthenticatedVoter;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -44,7 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 				.formLogin()
 					.loginPage("/login")
 						.failureUrl("/login?error=true")
-						.usernameParameter("login")
+						.usernameParameter("usuario")
 						.passwordParameter("password")
 						.defaultSuccessUrl("progress/index")
 			.and()
