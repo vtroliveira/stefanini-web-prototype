@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.stefanini.progress.model.Login;
+import br.com.stefanini.progress.model.User;
 import br.com.stefanini.progress.service.LoginService;
 
 @Controller
@@ -24,15 +25,14 @@ public class LoginController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/home", method = RequestMethod.GET)
-	public ModelAndView home(){
+	@RequestMapping(value="/index", method = RequestMethod.GET)
+	public ModelAndView index(){
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		Login login = loginService.findLoginByUsername(auth.getName());
-		modelAndView.addObject("userName", "Welcome " + login.getUsername() );
-		modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-		modelAndView.setViewName("/home");
+		Login login = loginService.findLoginByUserLogin(auth.getName());
+		modelAndView.addObject("userLogin", "Welcome " + login.getUserLogin() );
+		modelAndView.setViewName("/index");
 		return modelAndView;
 	}
-
+	
 }
