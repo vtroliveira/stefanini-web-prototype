@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ForgotPasswordController {
-	//
+	
 	
 	@RequestMapping(value= {"/forgotPassword"}, method=RequestMethod.GET)
 	public ModelAndView register(){

@@ -8,6 +8,7 @@ import br.com.stefanini.progress.repository.LoginRepository;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
+	
 
 	@Autowired
 	private LoginRepository loginRepository;
