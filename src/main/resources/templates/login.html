@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+
+<link rel="shortcut icon" th:href="@{/images/favicon.ico}"
+	type="image/x-icon" />
+
+<!-- 	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.mim.css}" /> -->
+<!-- 	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.mim.css}" /> -->
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/baseTelas.css}" />
+
+<title>Progress | Stefanini</title>
+</head>
+
+<body class="backGround">
+
+	<div id="boxBase">
+
+		<div id="box">
+
+			<div class="logo"></div>
+
+			<div id="boxContent">
+
+				<form method="post" th:action="@{/login}">
+
+					<h1 class="titulo">login</h1>
+
+					<input type="text" class="texto" name="user" id="user"
+						th:placeholder="usuario" required="required" /> <input
+						type="password" class="texto" name="password" id="password"
+						th:placeholder="senha" required="required" />
+
+					<button class="botao" name="Submit" value="Login" type="submit">entrar</button>
+
+					<div align="center" th:if="${param.error}">
+						<p style="font-size: 20; color: #FF1C19;">Login ou Senha
+							invalido, por favor verifique</p>
+					</div>
+
+				</form>				
+				
+				<br class="clr" />
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
