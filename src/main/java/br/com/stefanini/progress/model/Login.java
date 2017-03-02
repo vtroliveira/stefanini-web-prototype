@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Length;
+
 
 @Entity
 @Table(name = "tb_login")
@@ -22,15 +24,16 @@ public class Login implements Serializable {
 	private int idLogin;
 
 	// @NotEmpty(message = "*Por favor, insira seu usuário!")
-	@Column(name = "fd_user_login")
-	private String userLogin;
+	@Column(name = "fd_username")
+	private String username;
 
-	// @Length(min = 6, message = "*Sua senha deve conter, no mínimo, 6
-	// caracteres!")
-	// @NotEmpty(message = "*Por favor, insira sua senha!")
-	
-	@Column(name = "fd_password_login")
-	private String passwordLogin;
+	@Length(min = 6, message = "*Sua senha deve conter, no mínimo, 6 caracteres!")
+	// @NotEmpty(message = "*Por favor, insira sua senha!")	
+	@Column(name = "fd_password")
+	private String password;
+
+	@Column(name="fd_active_user")
+	private Boolean activeUser;
 
 	public int getIdLogin() {
 		return idLogin;
@@ -40,22 +43,30 @@ public class Login implements Serializable {
 		this.idLogin = idLogin;
 	}
 
-	public String getUserLogin() {
-		return userLogin;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserLogin(String userLogin) {
-		this.userLogin = userLogin;
+	public Boolean isActiveUser() {
+		return activeUser;
 	}
 
-	public String getPasswordLogin() {
-		return passwordLogin;
+	public void setActiveUser(Boolean activeUser) {
+		this.activeUser = activeUser;
 	}
 
-	public void setPasswordLogin(String passwordLogin) {
-		this.passwordLogin = passwordLogin;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	
-	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
 
 }

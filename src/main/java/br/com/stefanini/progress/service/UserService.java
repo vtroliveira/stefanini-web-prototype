@@ -2,8 +2,8 @@ package br.com.stefanini.progress.service;
 
 import br.com.stefanini.progress.model.Login;
 
-public interface LoginService {
+public interface UserService {
 	public Login findLoginByUsername(String username);
-	public void saveLogin(Login login);
+	//public void saveLogin(Login login);
 
 }

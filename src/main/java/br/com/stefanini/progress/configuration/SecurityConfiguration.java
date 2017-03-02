@@ -8,18 +8,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
-@EnableWebMvcSecurity
+@EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
-	
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+	//
+
 	@Autowired
 	private DataSource dataSource;
 	
@@ -30,46 +27,32 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	private String profileQuery;
 	
 	@Override
-	protected void configure(AuthenticationManagerBuilder auth)
-		throws Exception{
+	protected void configure(AuthenticationManagerBuilder auth)	throws Exception{
 		auth.
 			jdbcAuthentication()
 				.usersByUsernameQuery(loginQuery)
 				.authoritiesByUsernameQuery(profileQuery)
-				.dataSource(dataSource)
-				.passwordEncoder(bCryptPasswordEncoder);
+				.dataSource(dataSource);
 		
 	}
 	
 	@Override
-	protected void configure(HttpSecurity http) throws Exception{
+	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.
 			authorizeRequests()
-				.antMatchers("/")
-					.permitAll()
-				.antMatchers("/login")
-					.permitAll()
-				.antMatchers("/registration")
-					.permitAll()
-				.antMatchers("/progress/**")
-					.hasAuthority("USER")
-						.anyRequest()
-				.authenticated()
-			.and()
-				.csrf()
-				.disable()
-				.formLogin()
-					.loginPage("/login")
-						.failureUrl("/login?error=true")
-						.usernameParameter("usuario")
-						.passwordParameter("password")
-						.defaultSuccessUrl("progress/index")
-			.and()
-				.logout()
+				.antMatchers("/").permitAll()
+				.antMatchers("/login").permitAll()
+				.antMatchers("/register").permitAll()
+				.antMatchers("/progress/**").hasAuthority("ADM").anyRequest()
+				.authenticated().and().csrf().disable().formLogin()
+				.loginPage("/login").failureUrl("/login?error=true")
+				.defaultSuccessUrl("/progress/index")
+				.usernameParameter("user")
+				.passwordParameter("password")
+				.and().logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/").and().exceptionHandling()
-				.accessDeniedPage("/access-denied");
+				.logoutSuccessUrl("/").and().exceptionHandling();
 	}
 
 	@Override

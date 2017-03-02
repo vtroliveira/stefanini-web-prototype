@@ -7,5 +7,6 @@ import br.com.stefanini.progress.model.Profile;
 
 @Repository("profileRepository")
 public interface ProfileRepository extends JpaRepository<Profile, Long> {
+	//
 //	Profile findById(int id);
 }

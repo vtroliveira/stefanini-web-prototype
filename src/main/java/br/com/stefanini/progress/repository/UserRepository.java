@@ -7,5 +7,6 @@ import br.com.stefanini.progress.model.User;
 
 @Repository("userRepository")
 public interface UserRepository extends JpaRepository<User, Long>{
+	//
 //	User findByUsername(String username);
 }
