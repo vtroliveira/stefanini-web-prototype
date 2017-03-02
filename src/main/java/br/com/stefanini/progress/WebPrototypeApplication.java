@@ -8,5 +8,7 @@ public class WebPrototypeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebPrototypeApplication.class, args);
+		
+//		teste
 	}
 }
