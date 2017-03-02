@@ -27,13 +27,13 @@
 
 			<div id="boxContent">
 
-				<form method="POST" th:action="@{/login}">
+				<form method="POST" th:action="@{/progress/index}">
 
 					<h1 class="titulo">login</h1>
 
-					<input type="text" class="texto" id="usuario" name="usuario" th:placeholder="usuário" required="required" />
+					<input type="text" class="texto" id="usuario" name="user" th:placeholder="usuário" required="required" />
 
-					<input type="password" class="texto" id="password" name="password" th:placeholder="senha" required="required" />
+					<input type="password" class="texto" id="password" name="pass" th:placeholder="senha" required="required" />
 
 					<a class="link" th:href="@{/register}">Registrar-se</a> 
 					

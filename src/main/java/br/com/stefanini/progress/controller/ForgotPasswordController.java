@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ForgotPasswordController {
+public class ForgotPasswordController {	
 	
 	@RequestMapping(value= {"/forgotPassword"}, method=RequestMethod.GET)
 	public ModelAndView register(){

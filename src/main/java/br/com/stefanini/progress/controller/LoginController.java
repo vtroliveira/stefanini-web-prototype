@@ -9,30 +9,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.stefanini.progress.model.Login;
-import br.com.stefanini.progress.service.LoginService;
+import br.com.stefanini.progress.service.UserService;
 
 @Controller
-public class LoginController {
+public class LoginController {	
 	
-	@Autowired
-	private LoginService loginService;
+  @Autowired
+	private UserService userService;
   
-	@RequestMapping(value={"/","/login"}, method = RequestMethod.GET)
+  	@RequestMapping(value={"/","/login"}, method = RequestMethod.GET)
 	public ModelAndView login(){
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("login");
 		return modelAndView;
 	}
 	
-	
 	@RequestMapping(value="/progress/index", method = RequestMethod.GET)
 	public ModelAndView home(){
-	ModelAndView modelAndView = new ModelAndView();
-	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	Login login = loginService.findLoginByUsername(auth.getName());
-	//modelAndView.addObject("userName", "Bem vinda " + login.getUserLogin());
-	modelAndView.setViewName("progress/index");
-	return modelAndView;
+		ModelAndView modelAndView = new ModelAndView();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		Login login = userService.findLoginByUsername(auth.getName());
+		modelAndView.setViewName("progress/index");
+		return modelAndView;
 	}
 	
 }
