@@ -36,10 +36,10 @@ public class User implements Serializable {
 	@JoinTable(name = "tb_associative_user_profile", joinColumns = @JoinColumn(name = "cd_id_user" , foreignKey = @ForeignKey(name = "fk_constraint_associative_user")), inverseJoinColumns = @JoinColumn(name = "cd_id_profile" , foreignKey = @ForeignKey(name = "fk_constraint_associative_profile")))
 	private Profile profile;
 
-	@Column(name = "fd_name_user")
+	@Column(name = "fd_name")
 	private String nameUser;
 
-	@Column(name = "fd_email_user")
+	@Column(name = "fd_email")
 	// @Email(message="*Por favor providencie um email válido")
 	private String emailUser;
 
