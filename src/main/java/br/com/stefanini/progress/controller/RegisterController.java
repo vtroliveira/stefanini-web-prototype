@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class RegisterController {
 	
-
 	@RequestMapping(value= {"/register"}, method=RequestMethod.GET)
 	public ModelAndView register(){
 		ModelAndView modelAndView = new ModelAndView();

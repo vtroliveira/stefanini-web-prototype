@@ -12,8 +12,7 @@ import br.com.stefanini.progress.model.Login;
 import br.com.stefanini.progress.service.UserService;
 
 @Controller
-public class LoginController {
-	
+public class LoginController {	
 	
   @Autowired
 	private UserService userService;
