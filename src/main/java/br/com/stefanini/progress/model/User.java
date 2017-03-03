@@ -31,9 +31,10 @@ public class User implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "cd_id_login", foreignKey = @ForeignKey(name = "fk_constraint_login"))
 	private Login login;
-
+	
+	
 	@ManyToOne
-	@JoinTable(name = "tb_associative_user_profile", joinColumns = @JoinColumn(name = "cd_id_user" , foreignKey = @ForeignKey(name = "fk_constraint_associative_user")), inverseJoinColumns = @JoinColumn(name = "cd_id_profile" , foreignKey = @ForeignKey(name = "fk_constraint_associative_profile")))
+	@JoinColumn(name = "cd_id_profile" , foreignKey = @ForeignKey(name = "fk_constraint_profile"))
 	private Profile profile;
 
 	@Column(name = "fd_name_user")
