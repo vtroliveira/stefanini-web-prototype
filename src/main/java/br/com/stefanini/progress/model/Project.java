@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_project")
+@Table(name = "tb_dom_project")
 public class Project implements Serializable {
 	
 	

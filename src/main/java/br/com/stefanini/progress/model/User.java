@@ -21,7 +21,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
-@Table(name = "tb_user")
+@Table(name = "tb_cad_user")
 public class User implements Serializable {	
 
 	private static final long serialVersionUID = 1L;
@@ -52,7 +52,7 @@ public class User implements Serializable {
 	private String emailUser;
 
 	@ManyToMany(cascade = { CascadeType.ALL, CascadeType.REMOVE })
-	@JoinTable(name = "tb_associative_user_project", joinColumns = @JoinColumn(name = "cd_id_user", foreignKey = @ForeignKey(name = "fk_constraint_user")), inverseJoinColumns = @JoinColumn(name = "cd_id_project", foreignKey = @ForeignKey(name = "fk_constraint_project")))
+	@JoinTable(name = "tb_assoc_user_project", joinColumns = @JoinColumn(name = "cd_id_user", foreignKey = @ForeignKey(name = "fk_constraint_user")), inverseJoinColumns = @JoinColumn(name = "cd_id_project", foreignKey = @ForeignKey(name = "fk_constraint_project")))
 	private List<Project> project;
 
 	public List<Project> getProject() {

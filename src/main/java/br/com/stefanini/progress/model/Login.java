@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.Length;
 
 
 @Entity
-@Table(name = "tb_login")
+@Table(name = "tb_cad_login")
 public class Login implements Serializable {	
 
 	private static final long serialVersionUID = 1L;
