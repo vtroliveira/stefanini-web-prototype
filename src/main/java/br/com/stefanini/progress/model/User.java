@@ -17,6 +17,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.br.CPF;
+
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {	
@@ -32,6 +35,10 @@ public class User implements Serializable {
 	@JoinColumn(name = "cd_id_login", foreignKey = @ForeignKey(name = "fk_constraint_login"))
 	private Login login;
 	
+	@Column(name = "fd_cpf")
+	@CPF(message = "*Por favor forneça um CPF válido")
+	@NotEmpty(message = "*Por favor forneça seu CPF")
+	private String cpf;
 	
 	@ManyToOne
 	@JoinColumn(name = "cd_id_profile" , foreignKey = @ForeignKey(name = "fk_constraint_profile"))
@@ -82,6 +89,14 @@ public class User implements Serializable {
 
 	public void setProfile(Profile profile) {
 		this.profile = profile;
+	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getNameUser() {

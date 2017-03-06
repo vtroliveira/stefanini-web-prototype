@@ -35,6 +35,10 @@ public class Login implements Serializable {
 	@Column(name="fd_active_user")
 	private Boolean activeUser;
 
+	public Boolean getActiveUser() {
+		return activeUser;
+	}
+
 	public int getIdLogin() {
 		return idLogin;
 	}
