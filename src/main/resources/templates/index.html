@@ -2,20 +2,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	
-	<link rel="shortcut icon" th:href="@{/images/favicon.ico}"	type="image/x-icon" />
-	
-	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
-	<link rel="stylesheet" type="text/css" th:href="@{/css/baseTelas.css}" />
-	
-	<script src="skin/js/login.js"></script>
-	
-	<title>Progress | Stefanini</title>
+<meta charset="utf-8" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+<link rel="shortcut icon" href="images/biotalkicon.ico"
+	type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+<link rel="stylesheet" type="text/css" href="css/baseTelas.css" />
+<script src="javascript/javascript.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<title>BioTalk | UMC</title>
 </head>
 
-<body class="backGround">
-	
+<body class="fundo">
 
+	<!-- Menu-->
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+		<a class="icon-bar" href="#">Educação Ambiental</a> <a
+			class="icon-bar" href="#">Parques SP</a> <a class="icon-bar" href="#">Plantas
+			Medicinais</a> <a class="icon-bar" href="#">Contact</a>
+
+	</div>
+	<span class="icone" onclick="openNav()">&#9776; </span>
+
+	<div class="central" id="teste">
+		<div class="logo" href="/index.html"></div>
+	</div>
+
+
+	<!-- Conteudo	-->
+	<div class="estrutura"></div>
+
+
+
+	<!-- footer-->
+	<div class="footer2">
+		This footer will always be positioned at the bottom of the page, but <strong>not
+			fixed</strong>.
+	</div>
 </body>
 </html>

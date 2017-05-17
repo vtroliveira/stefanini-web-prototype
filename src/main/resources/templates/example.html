@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/baseTelas.css}" />
+
+<title>BioTalk | UMC</title>
+</head>
+
+<body class="backGround">
+
+	<script>
+		function plants(sw) {
+			var pic;
+			if (sw == 0) {
+				pic = "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia8827/camomila-horta-cursos-cpt.jpg"
+			} else {
+				pic = "https://www.chabeneficios.com.br/wp-content/uploads/2013/08/cha-de-erva-doce.jpg"
+			}
+			document.getElementById('plant_img').src = pic;
+		}
+	</script>
+
+	<div id="boxBase">
+
+		<div id="box">
+
+			<div class="logo"></div>
+
+			<div id="boxContent">
+
+				<form method="POST" th:action="@{/example}">
+
+					<h2 class="titulo">Camomila</h2>
+
+					<img class="plant_img"
+						src=""
+						alt="Planta" style="width: 304px; height: 228px;" />
+
+					<p>
+						<button type="button" onclick="plants(1)">Erva Doce</button>
+						<button type="button" onclick="plants(0)">Camomila</button>
+					</p>
+
+				</form>
+
+				<br class="clr" />
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

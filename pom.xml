@@ -3,13 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.com.stefanini</groupId>
-	<artifactId>web-prototype</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>br.com.umc.biotalk</groupId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>web-prototype</name>
-	<description>Projeto para upload de protótipos</description>
+	<name>web-biotalk</name>
+	<description>Projeto para integração de ciências biológicas</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -75,4 +74,5 @@
 	</build>
 
 
+	<artifactId>web-biotalk</artifactId>
 </project>

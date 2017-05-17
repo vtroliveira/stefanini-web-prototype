@@ -1,0 +1,157 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>BioTalk | UMC</title>
+<link rel="shortcut icon" th:href="@{/images/biotalkicon.ico}"
+	type="image/x-icon" />
+<h1 class="titulo">Cadastro de Parques de SP</h1>
+</head>
+<style>
+h1 {
+	display: block;
+	position: relative;
+	left: 10%;
+	margin-left: 33%;
+	margin-top: 3%;
+	font-family: Arial;
+	font-style: italic;
+	color: white;
+	text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.alignImg {
+	display: block;
+	position: relative;
+	left: 10%;
+	margin-left: 36.5%;
+	margin-top: 3%;
+}
+
+#nome {
+	width: 250px;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+#telefone {
+	width: 250px;
+	margin-left: 15px;
+}
+
+#email {
+	width: 250px;
+	margin-left: 15px;
+}
+
+#nomeParque {
+	width: 250px;
+	margin-left: 15px;
+}
+
+#localizacao {
+	width: 250px;
+	margin-left: 15px;
+}
+
+#AnexarImagem {
+	margin-left: 15px;
+	width: 142px;
+}
+
+#descricao {
+	margin-left: 15px;
+	width: 250px;
+	height: 200px;
+}
+
+#boxBaseParque {
+	display: block;
+	position: relative;
+	border: solid black 1px;
+	background-color: white;
+	width: 280px;
+	height: 540px;
+	left: 10%;
+	margin-left: 33%;
+	margin-top: 3%;
+}
+
+#btnSalvar {
+	font: bold 15px Tahoma, sans-serif;
+	font-style: normal;
+	color: #ffffff;
+	background: #1568db;
+	border: 0px solid #ffffff;
+	text-shadow: 0px -1px 1px #222222;
+	box-shadow: 2px 2px 5px #000000;
+	box-shadow: 2px 2px 5px #000000;
+	box-shadow: 2px 2px 5px #000000;
+	border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	width: 70px;
+	padding: 2px 15px;
+	cursor: pointer;
+	margin-left: 66%;
+}
+
+.fotoParque {
+	margin-left: 18px;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+
+.texto {
+	width: 100%;
+	box-sizing: border-box;
+	border: 0px;
+	border-bottom: 1px solid #000000;
+	font-size: 16px;
+	color: #0C132A;
+	font-family: "Open Sans", Tahoma, Verdana;
+	margin: 10px 10px 0 0;
+	padding: 10px 2px 10px 2px
+}
+</style>
+<body background="images/background.jpg">
+	<div class="alignImg">
+		<img width="150px" height="150px" src="images/logo.png" />
+	</div>
+
+	<div id="boxBaseParque">
+
+		<div id="boxCadastroParque">
+
+			<form method="post" action="@{/park-publish}">
+
+				<br><input type="text" class="texto" id="nome"
+					placeholder="Nome Completo" required="required" /></br>
+				<br> <input type="text" class="texto" id="telefone"
+					placeholder="Telefone" required="required" /></br>
+				<br> <input type="email" class="texto" id="email"
+					placeholder="Email" required="required" /> </br>
+				<br> <input type="text" class="texto" id="nomeParque"
+					placeholder="Nome do Parque" required="required" /></br>
+				<br> <input type="text" class="texto" id="localizacao"
+					placeholder="Localização (Endereço)" required="required" /></br>
+				
+				<br></br>
+				
+				<br><textarea id="descricao" class="txtdescricao" name="descricao"
+					cols="40" rows="5" placeholder="Descrição do Parque"
+					required="required"></textarea></br>
+				
+				<br><div class="fotoParque">
+					Foto do Parque:<input type="file" name="arquivo" id="AnexarImagem"
+						class="anexarImagem" />
+				</div></br>
+
+				<button id="btnSalvar" class="botao" type="submit">salvar</button>
+
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

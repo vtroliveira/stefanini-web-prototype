@@ -11,7 +11,7 @@ html {
 }
 
 .backGround {
-	background: #0C132A;
+	background: #0C2916;
 	height: 100%;
 /* 	margin: 0; */
 /* 	padding: 0; */
@@ -29,7 +29,7 @@ html {
 .botao {
 	background: #009;
 	color: #FFF;
-	background: #0C132A;
+	background: #0C2916;
 	border: none;
 	border-radius: 6px;
 	font-family: "Open Sans";
@@ -59,8 +59,8 @@ body {
 
 .logo {
 	width: 200px;
-	height: 70px;
-	margin: 0;
+	height: 200px;
+	margin: -15% 0px 200px 0px; 
 	background: url(../images/logo.png) center center no-repeat
 }
 

@@ -2,19 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	
-	<link rel="shortcut icon" th:href="@{/images/favicon.ico}"	type="image/x-icon" />
-	
-<!-- 	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.mim.css}" /> -->
-<!-- 	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.mim.css}" /> -->
-	
-	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
-	<link rel="stylesheet" type="text/css" th:href="@{/css/baseTelas.css}" />
-	
-	<script src="skin/js/login.js"></script>
-	
-	<title>Progress | Stefanini</title>
+<meta charset="utf-8" />
+<title>BioTalk | UMC</title>
+<link rel="shortcut icon" th:href="@{/images/biotalkicon.ico}"
+	type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+<link rel="stylesheet" type="text/css" href="css/baseTelas.css" />
+<!-- <script src="skin/js/login.js"></script> -->
 </head>
 
 <body class="backGround">
@@ -27,21 +21,23 @@
 
 			<div id="boxContent">
 
-				<form method="post" th:action="@{/login}">
+				<form method="POST" th:action="@{/login}">
 
-					<h1 class="titulo">login</h1>
+					<h1 class="titulo">Login</h1>
 
-					<input type="text" class="texto" id="usuario" placeholder="usuário" required="required" />
+					<input type="text" id="user" name="user" th:placeholder="usuário"
+						class="texto" required="required" /> 
+					<input type="password" id="password" name="password" th:placeholder="senha" class="texto"
+						required="required" />
 
-					<input type="password" class="texto" id="senha" placeholder="senha" required="required" />
+					<button class="botao" type="submit" th:text="login">entrar</button>
 
-					<a class="link" th:href="@{/register}">Registrar-se</a> 
-					
-					<a class="link" th:href="@{/forgotPassword}">Esqueceu a Senha?</a> 
-					
-					<button class="botao" type="submit">entrar</button>
-						
-<!-- 				<input type="button" class="botao" value="entrar" onClick="location.href='home.html'" /> -->
+					<div align="center" th:if="${param.error}">
+						<p style="font-size: 20; color: #FF1C19;">Login ou Senha
+							invalida!</p>
+					</div>
+
+					<a class="link" href="/forgotPassword">Esqueceu a Senha?</a>
 
 				</form>
 
